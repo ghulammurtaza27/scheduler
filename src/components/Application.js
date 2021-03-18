@@ -42,6 +42,10 @@ export default function Application(props) {
   const setDays = (days) => {
     setState(prev => ({ ...prev, days }));
   }
+
+  function bookInterview(id, interview) {
+    console.log(id, interview);
+  }
   
   const setDay = (day) => {
     setState({ ...state, day });
@@ -103,7 +107,7 @@ export default function Application(props) {
     
     const interview = getInterview(state, appointment.interview);
 
-    return (<Appointment key={appointment.id} interviewers={dailyInterviewers} {...appointment} interview={interview} />)})}
+    return (<Appointment key={appointment.id} bookInterview={bookInterview} interviewers={dailyInterviewers} {...appointment} interview={interview} />)})}
       </section>
     </main>
   );
