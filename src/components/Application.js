@@ -17,6 +17,7 @@ export default function Application(props) {
     cancelInterview
   } = useApplicationData();
 
+
   const interviewers = getInterviewersForDay(state, state.day);
 
   const appointments = getAppointmentsForDay(state, state.day).map(
@@ -44,7 +45,7 @@ export default function Application(props) {
         />
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
-          <DayList days={state.days} day={state.day} setDay={setDay} />
+          <DayList days={state.days} day={state.day} setDay={setDay} state={state} />
         </nav>
         <img
           className="sidebar__lhl sidebar--centered"
