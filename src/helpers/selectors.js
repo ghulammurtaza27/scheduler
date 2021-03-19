@@ -23,7 +23,7 @@ export function getInterview(state, interview) {
   
 }
 
-export function getInterviewsForDay(state, day) {
+export function getInterviewersForDay(state, day) {
   if (state.days.length === 0) {
     return [];
   }

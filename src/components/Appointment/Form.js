@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 export default function Form(props) {
   const [name, setName] = useState(props.name || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
+  console.log(props.interviewer);
 
   function submitHandler(event) {
     event.preventDefault();
@@ -19,6 +20,7 @@ export default function Form(props) {
     reset();
     props.onCancel();
   }
+  
 
 
   return(
@@ -42,7 +44,7 @@ export default function Form(props) {
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button danger onClick={cancel}>Cancel</Button>
-          <Button confirm onClick={props.onSave}>Save</Button>
+          <Button confirm onClick={() => props.onSave(name, interviewer)}>Save</Button>
         </section>
       </section>
     </main>
