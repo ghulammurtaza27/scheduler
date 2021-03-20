@@ -39,11 +39,21 @@ export function getInterviewersForDay(state, day) {
   return result;
 }
 
-export function updateSpots(days, id, value) {
+export function updateSpots(days, appointments, day, id, value) {
+  console.log("days: ", days)
+  console.log("day: ", day)
+  console.log("id: ", id )
+  console.log("appts: ", appointments[id].interview )
   days.forEach(day => {
-    if(day.appointments.includes(id)) {
-      day.spots = parseInt(day.spots) + value
-      console.log(day.spots)
+    if (!appointments[id].interview && value === -1) {
+      if(day.appointments.includes(id)) {
+        day.spots = parseInt(day.spots) + value
+      }
+    }
+    if (value === 1) {
+      if(day.appointments.includes(id)) {
+        day.spots = parseInt(day.spots) + value
+      }
     }
   })
   return days;
