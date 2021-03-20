@@ -39,11 +39,7 @@ export function getInterviewersForDay(state, day) {
   return result;
 }
 
-export function updateSpots(days, appointments, day, id, value) {
-  console.log("days: ", days)
-  console.log("day: ", day)
-  console.log("id: ", id )
-  console.log("appts: ", appointments[id].interview )
+export function updateSpots(days, appointments, id, value) {
   days.forEach(day => {
     if (!appointments[id].interview && value === -1) {
       if(day.appointments.includes(id)) {
