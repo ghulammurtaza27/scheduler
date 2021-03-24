@@ -34,4 +34,12 @@ npm run cypress
 
 ```
 ## Screenshots
+!["Screenshot of Appointments page with no appointment"](https://github.com/ghulammurtaza27/scheduler/blob/master/docs/Scheduler%20-1.png?raw=true)
+
+!["Screenshot of Appointments page with Appointment Form"](https://github.com/ghulammurtaza27/scheduler/blob/master/docs/Scheduler%20-%202.png?raw=true)
+
+!["Screenshot of Appointments page with Appointment"](https://github.com/ghulammurtaza27/scheduler/blob/master/docs/Schdeuler%20-%203.png?raw=true)
+
+
+!["Screenshot of Appointments page with Appointment Deletion Confirmation"](https://github.com/ghulammurtaza27/scheduler/blob/master/docs/Scheduler%20-%204.png?raw=true)
 
