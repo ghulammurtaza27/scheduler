@@ -11,7 +11,7 @@ export default function InterviewerListItem(props) {
 
   return (
     <li className={interviewerClass}
-    onClick={() => props.setInterviewer(props.key)}
+    onClick={props.setInterviewer}
 
     // onClick=props.setInterviewer}
 

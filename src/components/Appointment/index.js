@@ -26,6 +26,7 @@ export default function Appointment(props) {
   const SHOW = "SHOW";
   const CREATE = "CREATE";
   const SAVING = "SAVING";
+  const DELETING = "DELETING";
   const CONFIRM = "CONFIRM";
   const ERROR_SAVE = "ERROR_SAVE";
   const ERROR_DELETE = "ERROR_DELETE";
@@ -61,6 +62,7 @@ export default function Appointment(props) {
   }
   function deleteInterview() {
     transition('SAVING');
+    transition('DELETING');
     props.cancelInterview(props.id)
     .then(() => transition('EMPTY'))
     .catch(error => transition(ERROR_DELETE, true));
@@ -70,7 +72,7 @@ export default function Appointment(props) {
     props.interview ? SHOW : EMPTY
   );
   return (
-    <div>
+    <div className="appointment" data-testid="appointment">
       <Header time={props.time}/>
       {mode === EMPTY && <Empty onAdd={() => transition('CREATE')} />}
       {mode === SHOW && (
@@ -94,10 +96,13 @@ export default function Appointment(props) {
       />
       )}
       {mode === SAVING && (
-        <Status/>
+        <Status message="Saving"/>
+      )}
+      {mode === DELETING && (
+        <Status message="Deleting"/>
       )}
       {mode === CONFIRM && (
-        <Confirm
+        <Confirm message="Are you sure you would like to delete?"
         onCancel={() => back()}
         onConfirm= {deleteInterview}
         />
